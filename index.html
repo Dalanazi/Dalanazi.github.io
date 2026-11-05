@@ -163,7 +163,7 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
 #skills { position: relative; }
 #rain { position: absolute; inset: -24px 0; width: 100%; height: calc(100% + 48px); pointer-events: none; opacity: .22; }
 #skills > h2, #skills > .skills { position: relative; }
-.lab { display: grid; grid-template-columns: minmax(0, 1fr); margin-top: -24px; }
+.lab { display: grid; grid-template-columns: minmax(0, 1fr); }
 .pitch { font-family: var(--display); font-size: 1.5rem; line-height: 1.4; max-width: 34em; }
 .term { background: rgba(8, 13, 26, .86); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; box-shadow: 0 0 50px rgba(169, 139, 255, .14); min-width: 0; }
 .term .bar { display: flex; gap: 6px; align-items: center; padding: 10px 14px; border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: .75rem; color: var(--haze); }
@@ -273,7 +273,7 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
     <span class="brand"><span class="a">دانا محمد العنزي</span><span class="e">Dana Mohammad Alanazi</span></span>
     <nav aria-label="Sections">
       <a href="#projects"><span class="a">المشاريع</span><span class="e">Projects</span></a>
-      <a href="#wins"><span class="a">الإنجازات</span><span class="e">Achievements</span></a>
+      <a href="#log"><span class="a">الإنجازات</span><span class="e">Achievements</span></a>
       <a href="#skills"><span class="a">المهارات</span><span class="e">Skills</span></a>
       <a href="#contact"><span class="a">تواصل</span><span class="e">Contact</span></a>
       <a href="https://dalanazi.github.io/Dana_Alanazi_CV.pdf" target="_blank" rel="noopener"><span class="a">السيرة الذاتية</span><span class="e">CV</span></a>
@@ -299,12 +299,19 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
     </div>
   </div>
 
-  <ul class="wins" id="wins" aria-label="Achievements">
-    <li style="--c:var(--gold)"><strong><span class="a">المركز الأول</span><span class="e">1st place</span></strong><span class="label"><span class="a">هاكاثون ريادة AI 2026، مشروع MS SmartScan</span><span class="e">Riyada AI Hackathon 2026, MS SmartScan</span></span></li>
-    <li style="--c:var(--pink)"><strong><span class="a">المركز الثالث</span><span class="e">3rd place</span></strong><span class="label"><span class="a">ساتثون 2، فريق Digital Apollo</span><span class="e">Satthon 2, Team Digital Apollo</span></span></li>
-    <li style="--c:var(--aqua)"><strong><span class="a">جائزة التميز</span><span class="e">Excellence Award</span></strong><span class="label"><span class="a">مسابقة RATK_2025 للروبوت والذكاء الاصطناعي</span><span class="e">RATK_2025 Robotics &amp; AI Competition</span></span></li>
-    <li style="--c:var(--star)"><strong><span class="a">جائزة البناء</span><span class="e">Construction Award</span></strong><span class="label"><span class="a">بطولة VEX World الوطنية</span><span class="e">National VEX World Championship</span></span></li>
-  </ul>
+
+  <section id="log">
+    <h2><span class="a">الإنجازات</span><span class="e">Achievements</span></h2>
+    <ol class="log">
+      <li><time class="mono" dir="ltr">Nov 2026</time><p><span class="a">هاكاثون ريادة AI</span><span class="e">Riyada AI Hackathon</span><small><span class="a">فاز مشروع MS SmartScan في مسار جودة الحياة والاستدامة، ضمن فريق Digital Sight.</span><span class="e">MS SmartScan won the Quality of Life &amp; Sustainability track with Team Digital Sight.</span></small></p><span class="chip hot"><span class="a">المركز الأول</span><span class="e">1st place</span></span></li>
+      <li><time class="mono" dir="ltr">2026</time><p><span class="a">ترشيح المنتخب السعودي للروبوت</span><span class="e">Saudi National Robotics Team Nomination</span><small><span class="a">نال فريق TVTCR1 جائزة Tournament Finalists، ورُشّح بها للمشاركة في بطولة VEX U 2026 الدولية في سانت لويس بالولايات المتحدة.</span><span class="e">Team TVTCR1 earned Tournament Finalists and was nominated to compete at the VEX U 2026 international championship in St. Louis, USA.</span></small></p><span class="chip hot"><span class="a">Tournament Finalists</span><span class="e">Tournament Finalists</span></span></li>
+      <li><time class="mono" dir="ltr">May 2026</time><p><span class="a">ساتثون 2</span><span class="e">Satthon 2</span><small><span class="a">مسابقة رصد إشارات الأقمار الصناعية، برعاية الجمعية السعودية لهواة اللاسلكي، مع فريق Digital Apollo.</span><span class="e">A satellite signals competition sponsored by the Saudi Amateur Radio Society, with Team Digital Apollo.</span></small></p><span class="chip hot"><span class="a">المركز الثالث</span><span class="e">3rd place</span></span></li>
+      <li><time class="mono" dir="ltr">2025</time><p><span class="a">مسابقة RATK_2025</span><span class="e">RATK_2025 Competition</span><small><span class="a">مسابقة في الروبوت والذكاء الاصطناعي.</span><span class="e">A robotics and AI competition.</span></small></p><span class="chip hot"><span class="a">جائزة التميز</span><span class="e">Excellence Award</span></span></li>
+      <li><time class="mono" dir="ltr">Feb 2026</time><p><span class="a">بطولة VEX الوطنية للروبوتات، فئة الجامعات</span><span class="e">National VEX Robotics Championship, University Category</span><small><span class="a">فازت مع فريقها في البطولة بتنظيم الاتحاد السعودي للروبوت والرياضات اللاسلكية، بجامعة الأميرة نورة.</span><span class="e">Won with her team at the championship organized by the Saudi Federation for Robotics at PNU.</span></small></p><span class="chip hot"><span class="a">جائزة البناء</span><span class="e">Build Award</span></span></li>
+      <li><time class="mono" dir="ltr">Oct 2026</time><p><span class="a">هيلثون 2026</span><span class="e">Healthon 2026</span><small><span class="a">قُبل مشروع MS SmartScan وعُرض أمام لجنة التحكيم، في المدينة الطبية الجامعية بجامعة الملك سعود.</span><span class="e">MS SmartScan was accepted and pitched to the judges at KSU Medical City.</span></small></p><span class="chip hot"><span class="a">قبول وعرض</span><span class="e">Accepted</span></span></li>
+      <li><time class="mono" dir="ltr">May 2026</time><p><span class="a">مسابقة RoboRAVE</span><span class="e">RoboRAVE Competition</span><small><span class="a">مسابقة روبوتات مع الاتحاد السعودي للروبوتات و AI Arena.</span><span class="e">A robotics competition with the Saudi Federation for Robotics and AI Arena.</span></small></p><span class="chip"><span class="a">مشاركة</span><span class="e">Participant</span></span></li>
+    </ol>
+  </section>
 
   <div class="lab">
     <div class="term" dir="ltr" lang="en">
@@ -332,7 +339,6 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
         <div>
           <div class="stage3d" data-model>
             <canvas id="aoun3d" role="img" aria-label="Rotating 3D model of the two Aoun devices"></canvas>
-            <label for="explode"><span><span class="a">فكّك الجهاز</span><span class="e">Take it apart</span></span><input id="explode" type="range" min="0" max="100" value="0"></label>
             <p><span class="a">مجسم توضيحي · اسحب لتدويره</span><span class="e">Illustrative model · Drag to rotate</span></p>
           </div>
         </div>
@@ -341,9 +347,6 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
         <div>
           <h3>MS SmartScan</h3>
           <p class="meta"><span class="a">قائدة الفريق · 2026 · فريق Digital Sight</span><span class="e">Team leader · 2026 · Team Digital Sight</span></p>
-          <ul class="tags">
-            <li><span class="a">مقبول في هيلثون 2026 وعُرض أمام لجنة التحكيم</span><span class="e">Accepted at Healthon 2026, pitched to the judges</span></li>
-          </ul>
           <p class="a">جهاز يساعد أخصائيي الأشعة على اكتشاف الآفات في صور الرنين بالذكاء الاصطناعي.</p>
           <p class="e">A device that helps radiologists detect lesions in MRI scans with AI.</p>
         </div>
@@ -365,13 +368,6 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
     </div>
   </section>
 
-  <section id="log">
-    <h2><span class="a">مشاركات أخرى</span><span class="e">Other participation</span></h2>
-    <ol class="log">
-      <li><time class="mono" dir="ltr">May 2026</time><p><span class="a">مسابقة RoboRAVE</span><span class="e">RoboRAVE Competition</span><small><span class="a">الاتحاد السعودي للروبوتات · AI Arena</span><span class="e">Saudi Federation for Robotics · AI Arena</span></small></p><span class="chip"><span class="a">مشاركة</span><span class="e">Participant</span></span></li>
-      <li><time class="mono" dir="ltr">Feb 2026</time><p><span class="a">الاتحاد السعودي للروبوت، بطولة VEX الوطنية بجامعة الأميرة نورة</span><span class="e">Saudi Federation for Robotics, VEX Nationals at PNU</span></p><span class="chip"><span class="a">شكر وتقدير</span><span class="e">Appreciation</span></span></li>
-    </ol>
-  </section>
 
   <section id="skills">
     <h2><span class="a">المهارات</span><span class="e">Skills</span></h2>
@@ -573,9 +569,7 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
     }
     dev(-1.04, 2, 1.44, 0xa81824, [-.76], -.05, 'aoun-red.jpg');
     dev(1.1, 2.08, 1.27, 0x2caa3a, [-.78, .78], .02, 'aoun-green.jpg');
-    var sl = document.getElementById('explode');
-    function set() { var e = sl.value / 100; L.forEach(function (p) { p.z = p.base + (p.i - .6) * 1.15 * e; }); }
-    sl.addEventListener('input', set); set();
+    L.forEach(function (p) { p.z = p.base; });
   });
 
   stage('brain3d', 5.6, .18, function (add, tex) {
@@ -695,7 +689,7 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
     whoami: { a: ['دانا العنزي، طالبة تقنية برمجة وتطوير ويب في الرياض.', 'أحب برمجة العتاد، وأتجه نحو الأمن السيبراني والذكاء الاصطناعي.'], e: ['Dana Alanazi, Programming and Web Development student in Riyadh.', 'I like hardware programming and I am heading toward cybersecurity and AI.'] },
     skills: { a: ['العتاد: Arduino, ESP32, LoRa, GPS, الروبوتات', 'البرمجيات: Android Studio, PHP, Git, PL/SQL', 'الأمن: أساسيات الشبكات والأمن'], e: ['Hardware: Arduino, ESP32, LoRa, GPS, robotics', 'Software: Android Studio, PHP, Git, PL/SQL', 'Security: networking and security basics'] },
     projects: { a: ['جهاز عون: تأهل لسيف 2026 وطلب براءة مقدَّم', 'MS SmartScan: المركز الأول في ريادة AI', 'Authentic Doc: منصة التحقق من الشهادات', 'منصة إرث: حفظ الإرث الرقمي وإيصاله بأمان'], e: ['Aoun: qualified for SAIF 2026, patent application filed', 'MS SmartScan: 1st place, Riyada AI Hackathon', 'Authentic Doc: certificate verification platform', 'Irth: digital inheritance platform'] },
-    awards: { a: ['المركز الأول: هاكاثون ريادة AI', 'المركز الثالث: ساتثون 2', 'جائزة التميز: RATK_2025', 'جائزة البناء: VEX World الوطنية'], e: ['1st place: Riyada AI Hackathon', '3rd place: Satthon 2', 'Excellence Award: RATK_2025', 'Construction Award: National VEX World'] },
+    awards: { a: ['المركز الأول: هاكاثون ريادة AI', 'Tournament Finalists: فريق TVTCR1، ترشيح المنتخب السعودي للروبوت', 'المركز الثالث: ساتثون 2', 'جائزة التميز: RATK_2025', 'جائزة البناء: بطولة VEX الوطنية، فئة الجامعات'], e: ['1st place: Riyada AI Hackathon', 'Tournament Finalists: Team TVTCR1, Saudi national robotics team nomination', '3rd place: Satthon 2', 'Excellence Award: RATK_2025', 'Build Award: National VEX Championship, University Category'] },
     volunteer: { a: ['21 ساعة تطوع موثقة في المنصة الوطنية للعمل التطوعي'], e: ['21 certified volunteer hours on the National Volunteering Platform'] },
     contact: { a: ['dno.alanazi8@gmail.com', 'متاحة للتدريب التعاوني من 24 يناير 2027'], e: ['dno.alanazi8@gmail.com', 'Available for co-op training from 24 Jan 2027'] }
   };
@@ -723,7 +717,7 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
     top: ['أهلًا! أنا دليلك في صفحة دانا. نزّل معي', 'Hi! I am your guide to Dana\'s page. Scroll with me'],
     lab: ['جرّب تكتب help في الطرفية', 'Try typing help in the terminal'],
     projects: ['هنا أكبر مشاريعها، حرّك المجسمات', 'Her biggest projects. Try dragging the models'],
-    log: ['وهذي مشاركات أخرى لها', 'And here are more of her events'],
+    log: ['هذي إنجازاتها، من الأهم', 'Her achievements, most important first'],
     skills: ['مهاراتها من العتاد إلى الأمن', 'Her skills, from hardware to security'],
     contact: ['لا تتردد، راسلها!', 'Go ahead, send her a message!']
   };
