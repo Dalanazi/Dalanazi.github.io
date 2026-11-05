@@ -246,6 +246,50 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
   .log p { grid-column: 1 / -1; grid-row: 2; }
   .skills { grid-template-columns: minmax(0, 1fr); gap: 24px; }
 }
+/* --- Refined layout --- */
+#app { gap: 96px; }
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 4; justify-content: flex-end; margin: 0 0 -72px; padding-block: 14px; background: rgba(15, 26, 46, .82); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.top button { background: none; color: var(--star); border: 1px solid var(--line); }
+.top button:hover { background: var(--deep); }
+.hero { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: center; padding-top: 24px; }
+.hero > div { gap: 16px; }
+.hero h1 { font-size: clamp(2.5rem, 5.5vw, 4rem); color: var(--gold); }
+.role { color: var(--haze); font-size: 1rem; }
+.tag { font-family: var(--display); font-size: clamp(1.375rem, 2.6vw, 1.875rem); line-height: 1.3; }
+.tag em { font-style: normal; color: var(--gold); }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+.btn { display: inline-block; padding: 9px 22px; border-radius: 6px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-weight: 500; font-size: .9375rem; transition: background-color .2s ease, color .2s ease; }
+.btn.main, .btn:hover { background: var(--gold); color: #0F1A2E; }
+.facts-row { display: flex; flex-wrap: wrap; gap: 12px 40px; margin: 8px 0 0; padding-top: 16px; border-top: 1px solid var(--line); }
+.facts-row dt { font-size: .8125rem; color: var(--haze); }
+.facts-row dd { margin: 0; font-weight: 500; }
+.motto { min-height: 260px; }
+.motto p { font-size: clamp(1.75rem, 3.2vw, 2.5rem); }
+h2 { background: none; -webkit-text-fill-color: currentColor; color: var(--gold); font-size: 2rem; padding-bottom: 12px; border-bottom: 1px solid var(--line); justify-self: stretch; }
+.contact h2 { color: inherit; border: 0; padding: 0; }
+section { gap: 24px; }
+.chip.hot { background: var(--gold); }
+.skills > div h3, .skills > div:nth-child(n) h3 { color: var(--star); }
+.two h2 { font-size: 1.5rem; }
+.stack { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; }
+.project, .project.gold, .project.pink { grid-template-columns: minmax(0, 1fr); gap: 16px; padding: 24px; box-shadow: none; }
+.project > div:last-child { order: -1; }
+.project h3 { font-size: 2rem; }
+.stage3d canvas { aspect-ratio: 4 / 3; }
+.course { background: rgba(26, 40, 64, .55); }
+.lab { display: grid; }
+#tty { height: 12.5em; }
+.contact { border-radius: 10px; }
+section { scroll-margin-top: 84px; }
+.top { box-shadow: 0 0 0 100vmax rgba(15, 26, 46, .82); clip-path: inset(0 -100vmax); }
+@media (max-width: 860px) {
+  .stack, .hero { grid-template-columns: minmax(0, 1fr); }
+  .top { position: static; justify-content: flex-start; margin-bottom: -48px; box-shadow: none; clip-path: none; background: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+  section { scroll-margin-top: 16px; }
+  #app { gap: 72px; }
+  .motto { min-height: 220px; }
+  .acts { gap: 24px; }
+}
 </style>
 
 </head>
@@ -274,7 +318,6 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
     </svg>
   </button>
   <header class="top">
-    <span class="brand"><span class="a">دانا محمد العنزي</span><span class="e">Dana Mohammad Alanazi</span></span>
     <nav aria-label="Sections">
       <a href="#projects"><span class="a">المشاريع</span><span class="e">Projects</span></a>
       <a href="#log"><span class="a">الإنجازات</span><span class="e">Achievements</span></a>
@@ -287,10 +330,19 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
 
   <div class="hero">
     <div>
-      <h1><span class="a">أبني حلولًا تقنية تترك <em>أثرًا</em></span><span class="e">I build tech solutions that leave a <em>mark</em></span></h1>
-      <p class="lede a">طالبة تقنية برمجة وتطوير ويب في الكلية التقنية الرقمية للبنات بالرياض. أحب العمل العملي: برمجة العتاد، وإنترنت الأشياء، والروبوتات، وتتبع الأقمار الصناعية. قدتُ فريقين ابتكاريين في 2026، وأتجه نحو الأمن السيبراني والذكاء الاصطناعي.</p>
-      <p class="lede e">Programming and Web Development student at the Digital Technical College for Girls in Riyadh. I like hands-on work: hardware programming, IoT, robotics, and satellite tracking. I led two innovation teams in 2026 and I'm heading toward cybersecurity and AI.</p>
-      <p class="coop"><span class="a"><b>متاحة للتدريب التعاوني</b> من 24 يناير 2027 لمدة 14 أسبوعًا · المعدل <span class="mono" dir="ltr">4.52 / 5</span></span><span class="e"><b>Available for co-op training</b> from 24 Jan 2027 for 14 weeks · GPA <span class="mono">4.52 / 5</span></span></p>
+      <h1><span class="a">دانا محمد العنزي</span><span class="e">Dana Mohammad Alanazi</span></h1>
+      <p class="role"><span class="a">طالبة تقنية برمجة وتطوير ويب · الكلية التقنية الرقمية للبنات، الرياض</span><span class="e">Programming &amp; Web Development Student · Digital Technical College for Girls, Riyadh</span></p>
+      <p class="tag"><span class="a">أبني حلولًا تقنية تترك <em>أثرًا</em></span><span class="e">I build tech solutions that leave a <em>mark</em></span></p>
+      <p class="lede a">أحب العمل العملي: برمجة العتاد، وإنترنت الأشياء، والروبوتات، وتتبع الأقمار الصناعية. قدتُ فريقين ابتكاريين في 2026، وأتجه نحو الأمن السيبراني والذكاء الاصطناعي.</p>
+      <p class="lede e">I like hands-on work: hardware programming, IoT, robotics, and satellite tracking. I led two innovation teams in 2026 and I'm heading toward cybersecurity and AI.</p>
+      <div class="cta">
+        <a class="btn main" href="#projects"><span class="a">شاهد المشاريع</span><span class="e">View projects</span></a>
+        <a class="btn" href="https://dalanazi.github.io/Dana_Alanazi_CV.pdf" target="_blank" rel="noopener"><span class="a">السيرة الذاتية</span><span class="e">Download CV</span></a>
+      </div>
+      <dl class="facts-row">
+        <div><dt><span class="a">التدريب التعاوني</span><span class="e">Co-op training</span></dt><dd><span class="a">من 24 يناير 2027 · 14 أسبوعًا</span><span class="e">From 24 Jan 2027 · 14 weeks</span></dd></div>
+        <div><dt><span class="a">المعدل التراكمي</span><span class="e">Cumulative GPA</span></dt><dd class="mono" dir="ltr">4.52 / 5</dd></div>
+      </dl>
     </div>
     <div class="motto">
       <svg id="orbits" viewBox="-210 -150 420 300" aria-hidden="true">
@@ -318,7 +370,7 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
   </section>
 
   <section id="projects">
-    <h2><span class="a">المشاريع</span><span class="e">Projects</span></h2>
+    <h2><span class="a">المشاريع الرئيسية</span><span class="e">Featured projects</span></h2>
     <div class="stack">
       <article class="project gold">
         <div>
@@ -353,25 +405,17 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
           <img class="shot" id="brainfb" hidden src="smartscan.jpg" alt="Pink brain-shaped MS SmartScan device showing lesions marked on an MRI slice">
         </div>
       </article>
-      <h3 style="font-size:1.375rem;color:var(--aqua);padding-top:16px"><span class="a">مشاريع مواد في الكلية</span><span class="e">College course projects</span></h3>
-      <div class="courses">
+    </div>
+  </section>
+
+  <section id="courses">
+    <h2><span class="a">مشاريع المواد الدراسية</span><span class="e">Course projects</span></h2>
+<div class="courses">
         <article class="course"><div class="ch"><h4>Authentic Doc</h4><p class="label"><span class="a">تصدر الجامعة الشهادة رقميًا، وتُسجَّل بصمتها على البلوكتشين، ويحتفظ بها الطالب في محفظة رقمية، وتتحقق منها جهات التوظيف فورًا.</span><span class="e">The university issues the certificate digitally, its fingerprint is recorded on the blockchain, the student keeps it in a digital wallet, and employers verify it instantly.</span></p></div><div class="thumbs"><button type="button" class="thumb" data-full="gal/doc-hero.jpg" aria-label="Authentic Doc home page"><img src="gal/doc-hero.jpg" alt="Authentic Doc home page" loading="lazy"></button><button type="button" class="thumb" data-full="gal/doc-steps.jpg" aria-label="Authentic Doc: how it works"><img src="gal/doc-steps.jpg" alt="Authentic Doc: how it works" loading="lazy"></button><button type="button" class="thumb" data-full="gal/doc-features.jpg" aria-label="Authentic Doc features"><img src="gal/doc-features.jpg" alt="Authentic Doc features" loading="lazy"></button><button type="button" class="thumb" data-full="gal/doc-users.jpg" aria-label="Authentic Doc for employers"><img src="gal/doc-users.jpg" alt="Authentic Doc for employers" loading="lazy"></button></div></article>
         <article class="course"><div class="ch"><h4><span class="a">منصة إرث</span><span class="e">Irth Platform</span></h4><p class="label"><span class="a">نموذج تصميم لمنصة يحفظ فيها المستخدم حساباته ووثائقه في خزنة رقمية، وتصل إلى ورثته بعد التحقق من الوفاة والهوية.</span><span class="e">A design prototype of a platform where users keep accounts and documents in a digital vault, which reaches their heirs after death and identity are verified.</span></p></div><div class="thumbs"><button type="button" class="thumb" data-full="gal/irth-login.jpg" aria-label="Irth sign-in"><img src="gal/irth-login.jpg" alt="Irth sign-in" loading="lazy"></button><button type="button" class="thumb" data-full="gal/irth-dashboard.jpg" aria-label="Irth dashboard"><img src="gal/irth-dashboard.jpg" alt="Irth dashboard" loading="lazy"></button><button type="button" class="thumb" data-full="gal/irth-vault.jpg" aria-label="Irth digital vault"><img src="gal/irth-vault.jpg" alt="Irth digital vault" loading="lazy"></button><button type="button" class="thumb" data-full="gal/irth-requests.jpg" aria-label="Irth inheritance requests"><img src="gal/irth-requests.jpg" alt="Irth inheritance requests" loading="lazy"></button></div></article>
         <article class="course"><div class="ch"><h4><span class="a">نظام تسجيل المتدربين</span><span class="e">Trainee Registration System</span></h4><p class="label"><span class="a">يسجّل المسؤول دخوله ويدير بيانات المتدربين من قائمة واحدة: إضافة وتعديل وحذف وبحث، بلغة PHP.</span><span class="e">Built in PHP. An admin signs in and manages trainee records from one menu: add, edit, delete, and search.</span></p></div><div class="thumbs fit"><button type="button" class="thumb" data-full="gal/php-login.jpg" aria-label="Sign-in page"><img src="gal/php-login.jpg" alt="Sign-in page" loading="lazy"></button><button type="button" class="thumb" data-full="gal/php-home.jpg" aria-label="Home menu"><img src="gal/php-home.jpg" alt="Home menu" loading="lazy"></button><button type="button" class="thumb" data-full="gal/php-edit.jpg" aria-label="Edit record"><img src="gal/php-edit.jpg" alt="Edit record" loading="lazy"></button><button type="button" class="thumb" data-full="gal/php-search.jpg" aria-label="Search records"><img src="gal/php-search.jpg" alt="Search records" loading="lazy"></button></div></article>
       </div>
-
-    </div>
   </section>
-
-
-  <div class="lab">
-    <div class="term" dir="ltr" lang="en">
-      <div class="bar"><i style="background:var(--coral)"></i><i style="background:var(--gold)"></i><i style="background:var(--ok)"></i><span>dana@riyadh: ~</span></div>
-      <div id="tty"><div class="c">whoami</div><div class="o">dana_alanazi # programmer, maker, robotics</div><div class="c">./aoun --send SOS --no-network</div><div class="o">[ok] signal delivered</div><div class="c">python detect.py --scan mri</div><div class="o">[ok] lesions marked</div><div class="c">sudo learn cybersecurity</div><div class="w">[..] in progress</div><div class="c">echo $NEXT</div><div class="o">co-op training, Jan 2027</div></div>
-      <form id="cmd" autocomplete="off"><label for="cmdin">$</label><input id="cmdin" type="text" spellcheck="false" autocapitalize="off" placeholder="type a command, e.g. help" aria-label="Terminal command"></form>
-      <div class="hints"><button type="button">help</button><button type="button">whoami</button><button type="button">skills</button><button type="button">projects</button><button type="button">awards</button><button type="button">contact</button></div>
-    </div>
-  </div>
 
   <section id="skills">
     <h2><span class="a">المهارات</span><span class="e">Skills</span></h2>
@@ -415,6 +459,15 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
       <p><span class="a">العربية: اللغة الأم · الإنجليزية: ممتاز</span><span class="e">Arabic: native · English: excellent</span></p>
     </div>
   </section>
+
+  <div class="lab">
+    <div class="term" dir="ltr" lang="en">
+      <div class="bar"><i style="background:var(--coral)"></i><i style="background:var(--gold)"></i><i style="background:var(--ok)"></i><span>dana@riyadh: ~</span></div>
+      <div id="tty"><div class="c">whoami</div><div class="o">dana_alanazi # programmer, maker, robotics</div><div class="c">./aoun --send SOS --no-network</div><div class="o">[ok] signal delivered</div><div class="c">python detect.py --scan mri</div><div class="o">[ok] lesions marked</div><div class="c">sudo learn cybersecurity</div><div class="w">[..] in progress</div><div class="c">echo $NEXT</div><div class="o">co-op training, Jan 2027</div></div>
+      <form id="cmd" autocomplete="off"><label for="cmdin">$</label><input id="cmdin" type="text" spellcheck="false" autocapitalize="off" placeholder="type a command, e.g. help" aria-label="Terminal command"></form>
+      <div class="hints"><button type="button">help</button><button type="button">whoami</button><button type="button">skills</button><button type="button">projects</button><button type="button">awards</button><button type="button">contact</button></div>
+    </div>
+  </div>
 
   <section class="contact" id="contact">
     <h2><span class="a">لنصنع أثرًا معًا</span><span class="e">Let's make a mark together</span></h2>
