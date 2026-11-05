@@ -3,25 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Dana Alanazi portfolio: projects, achievements, and skills.">
+<meta name="description" content="Programming and Web Development student in Riyadh: projects, achievements, and skills.">
+<meta property="og:title" content="Dana Mohammad Alanazi | Portfolio">
+<meta property="og:description" content="Programming and Web Development student in Riyadh: projects, achievements, and skills.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dalanazi.github.io/">
 <style>:root{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}body{margin:0;font-size:14px}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>Dana Alanazi Portfolio</title>
+<title>Dana Mohammad Alanazi | Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Lalezar&family=Readex+Pro:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Readex+Pro:wght@300;400;500;600;700&display=swap">
 <style>
 /* Layout: a midnight sky. Her name is drawn as a constellation, wins shine as a row of big results, and the two lead projects are solid blocks of colour against the night. */
 :root {
   color-scheme: dark;
   --night: #0F1A2E; --deep: #1A2840; --star: #F3F5F9; --haze: #B3BFD3; --line: #2E3E5A;
   --pink: #93B7E4; --gold: #D2B06A; --aqua: #8CC9C9;
-  --display: "Lalezar", "Readex Pro", Tahoma, sans-serif;
+  --display: "Readex Pro", "Segoe UI", Tahoma, sans-serif;
   --body: "Readex Pro", "Segoe UI", Tahoma, sans-serif;
   --mono: "IBM Plex Mono", "Courier New", monospace;
 }
 body { background: var(--night); color: var(--star); font-family: var(--body); font-weight: 300; font-size: 16px; line-height: 1.75;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 48px; }
-#aurora { position: fixed; inset: -12%; pointer-events: none; z-index: 0; background: radial-gradient(45% 45% at 82% 14%, rgba(169,139,255,.22), transparent 70%), radial-gradient(45% 50% at 12% 52%, rgba(53,224,210,.13), transparent 70%), radial-gradient(45% 45% at 72% 90%, rgba(255,127,176,.14), transparent 70%); }
+#aurora { position: fixed; inset: -12%; pointer-events: none; z-index: 0; background: radial-gradient(45% 45% at 82% 14%, rgba(169,139,255,.1), transparent 70%), radial-gradient(45% 50% at 12% 52%, rgba(53,224,210,.07), transparent 70%), radial-gradient(45% 45% at 72% 90%, rgba(255,127,176,.06), transparent 70%); }
 #sky { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
 #app { position: relative; z-index: 1; max-width: 1080px; margin-inline: auto; display: grid; gap: 80px; }
 #app[data-lang="ar"] .e, #app[data-lang="en"] .a { display: none; }
@@ -64,13 +68,6 @@ button:hover { background: var(--star); }
 .lede { max-width: 56ch; font-size: 1.0625rem; }
 .coop { color: var(--haze); font-size: .9375rem; }
 .coop b { color: var(--star); }
-.motto { position: relative; display: grid !important; place-items: center; min-height: 300px; }
-.motto svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-.motto ellipse { fill: none; stroke: var(--line); }
-.motto circle { fill: var(--gold); }
-.motto circle.alt { fill: var(--aqua); }
-.motto .sat rect { fill: var(--pink); }
-.motto p { position: relative; text-align: center; font-family: var(--display); font-size: clamp(2.5rem, 5vw, 3.75rem); line-height: 1.15; color: var(--gold); max-width: 8.5em; text-wrap: balance; }
 
 .wins { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: -32px; }
 .wins li { display: grid; gap: 2px; align-content: start; padding: 16px 0 0; border-top: 3px solid var(--c); min-width: 0; }
@@ -263,8 +260,6 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
 .facts-row { display: flex; flex-wrap: wrap; gap: 12px 40px; margin: 8px 0 0; padding-top: 16px; border-top: 1px solid var(--line); }
 .facts-row dt { font-size: .8125rem; color: var(--haze); }
 .facts-row dd { margin: 0; font-weight: 500; }
-.motto { min-height: 260px; }
-.motto p { font-size: clamp(1.75rem, 3.2vw, 2.5rem); }
 h2 { background: none; -webkit-text-fill-color: currentColor; color: var(--gold); font-size: 2rem; padding-bottom: 12px; border-bottom: 1px solid var(--line); justify-self: stretch; }
 .contact h2 { color: inherit; border: 0; padding: 0; }
 section { gap: 24px; }
@@ -280,6 +275,14 @@ section { gap: 24px; }
 .lab { display: grid; }
 #tty { height: 12.5em; }
 .contact { border-radius: 10px; }
+h1, h2, h3, h4, .tag, .pitch { font-weight: 600; }
+.hero h1 { font-weight: 700; }
+.pitch { font-size: 1.25rem; font-weight: 500; }
+.glance { background: rgba(26, 40, 64, .7); border: 1px solid var(--line); border-radius: 10px; padding: 24px; display: grid; gap: 16px; min-width: 0; }
+.gl-t { font-family: var(--display); font-weight: 600; font-size: 1.125rem; color: var(--gold); padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.glance dl { margin: 0; display: grid; gap: 14px; }
+.glance dt { font-size: .8125rem; color: var(--haze); }
+.glance dd { margin: 0; font-weight: 500; }
 section { scroll-margin-top: 84px; }
 .top { box-shadow: 0 0 0 100vmax rgba(15, 26, 46, .82); clip-path: inset(0 -100vmax); }
 @media (max-width: 860px) {
@@ -287,7 +290,6 @@ section { scroll-margin-top: 84px; }
   .top { position: static; justify-content: flex-start; margin-bottom: -48px; box-shadow: none; clip-path: none; background: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
   section { scroll-margin-top: 16px; }
   #app { gap: 72px; }
-  .motto { min-height: 220px; }
   .acts { gap: 24px; }
 }
 </style>
@@ -339,20 +341,16 @@ section { scroll-margin-top: 84px; }
         <a class="btn main" href="#projects"><span class="a">شاهد المشاريع</span><span class="e">View projects</span></a>
         <a class="btn" href="https://dalanazi.github.io/Dana_Alanazi_CV.pdf" target="_blank" rel="noopener"><span class="a">السيرة الذاتية</span><span class="e">Download CV</span></a>
       </div>
-      <dl class="facts-row">
+    </div>
+    <aside class="glance">
+      <p class="gl-t"><span class="a">طموحي أبعد من المدار</span><span class="e">My ambition reaches beyond orbit</span></p>
+      <dl>
+        <div><dt><span class="a">أبرز إنجاز</span><span class="e">Top achievement</span></dt><dd><span class="a">المركز الأول، هاكاثون ريادة AI 2026</span><span class="e">1st place, Riyada AI Hackathon 2026</span></dd></div>
+        <div><dt><span class="a">مجالات التركيز</span><span class="e">Focus areas</span></dt><dd><span class="a">إنترنت الأشياء · الروبوتات · الذكاء الاصطناعي</span><span class="e">IoT · Robotics · AI</span></dd></div>
         <div><dt><span class="a">التدريب التعاوني</span><span class="e">Co-op training</span></dt><dd><span class="a">من 24 يناير 2027 · 14 أسبوعًا</span><span class="e">From 24 Jan 2027 · 14 weeks</span></dd></div>
         <div><dt><span class="a">المعدل التراكمي</span><span class="e">Cumulative GPA</span></dt><dd class="mono" dir="ltr">4.52 / 5</dd></div>
       </dl>
-    </div>
-    <div class="motto">
-      <svg id="orbits" viewBox="-210 -150 420 300" aria-hidden="true">
-        <ellipse id="o1" rx="195" ry="62" transform="rotate(-18)"/>
-        <ellipse id="o2" rx="160" ry="118" transform="rotate(24)"/>
-        <g transform="rotate(-18)"><g class="sat"><rect x="-4" y="-4" width="8" height="8"/><rect x="-16" y="-2.5" width="9" height="5"/><rect x="7" y="-2.5" width="9" height="5"/><animateMotion dur="34s" repeatCount="indefinite" rotate="auto" path="M195 0A195 62 0 1 1-195 0A195 62 0 1 1 195 0" /></g></g>
-        <circle class="alt" r="4"><animateMotion dur="26s" repeatCount="indefinite" path="M-110 -116A160 118 24 1 0 110 116A160 118 24 1 0 -110 -116"/></circle>
-      </svg>
-      <p><span class="a">طموحي أبعد من المدار</span><span class="e">My ambition reaches beyond orbit</span></p>
-    </div>
+    </aside>
   </div>
 
 
@@ -471,7 +469,7 @@ section { scroll-margin-top: 84px; }
 
   <section class="contact" id="contact">
     <h2><span class="a">لنصنع أثرًا معًا</span><span class="e">Let's make a mark together</span></h2>
-    <p class="pitch"><span class="a">شغوفة بالتعلم، أخوض مجالات متنوعة لأوسّع مهاراتي وأفيد من حولي، وسأكون إضافة جميلة لفريقكم.</span><span class="e">Passionate about learning, I explore many fields to widen my skills and help those around me, and I will be a great addition to your team.</span></p>
+    <p class="pitch"><span class="a">شغوفة بالتعلم، أخوض مجالات متنوعة لأوسّع مهاراتي وأفيد من حولي، وسأكون إضافة قيّمة لفريقكم.</span><span class="e">Passionate about learning, I explore many fields to widen my skills and help those around me, and I will be a valuable addition to your team.</span></p>
     <p class="a">لديك فرصة تدريب تعاوني؟ يسعدني تواصلك.</p>
     <p class="e">Have a co-op opportunity? I would love to hear from you.</p>
     <div class="row">
@@ -648,7 +646,7 @@ section { scroll-margin-top: 84px; }
       var wx = x + .35 * n3(x * 2 + 5, y * 2, z * 2), wy = y + .35 * n3(x * 2, y * 2 + 9, z * 2), wz = z + .35 * n3(x * 2, y * 2, z * 2 + 3);
       var ridge = 1 - Math.abs(2 * n3(wx * 4.8 + 3, wy * 4.8, wz * 4.8) - 1);
       var front = Math.min(1, Math.max(0, (z - .58) / .14));
-      var r = 1 + Math.pow(ridge, 2.2) * .19 * (1 - front);
+      var r = 1 + Math.pow(ridge, 2.2) * .12 * (1 - front);
       if (y > 0 || z < .3) r *= 1 - .13 * Math.exp(-Math.pow(x / .045, 2));
       var X = x * r * 1.32, Y = y * r * 1.02, Z = z * r * 1.22;
       if (Z > flat) Z = flat;
@@ -706,7 +704,7 @@ section { scroll-margin-top: 84px; }
     W = innerWidth; H = innerHeight; c.width = W * d; c.height = H * d; x.setTransform(d, 0, 0, d, 0, 0);
     function r() { s = (s * 16807) % 2147483647; return s / 2147483647; }
     st = [];
-    for (var i = 0, n = Math.round(W * H / 9000); i < n; i++) st.push({ x: r() * W, y: r() * H, z: .4 + r() * 1.2, a: .12 + r() * .4, p: r() * 6.3, s: .4 + r() * 1.1, g: r() > .85 });
+    for (var i = 0, n = Math.round(W * H / 20000); i < n; i++) st.push({ x: r() * W, y: r() * H, z: .4 + r() * 1.2, a: .08 + r() * .22, p: r() * 6.3, s: .4 + r() * 1.1, g: r() > .85 });
   }
   function draw(t) {
     x.clearRect(0, 0, W, H);
@@ -790,7 +788,7 @@ section { scroll-margin-top: 84px; }
   function place() {
     var W = document.documentElement.clientWidth, bw = bot.offsetWidth, m = document.documentElement.scrollHeight - innerHeight, q = m > 0 ? Math.min(1, scrollY / m) : 0;
     var span = W - bw - 16, rtl = app.dir === 'rtl';
-    botX = 8 + (calm ? (rtl ? 0 : span) : (rtl ? span * (1 - q) : span * q));
+    botX = 8 + (rtl ? 0 : span);
     bot.style.transform = 'translateX(' + botX + 'px)';
     var sw = sayEl.offsetWidth; sayEl.style.left = Math.max(8, Math.min(W - sw - 8, botX + bw / 2 - sw / 2)) + 'px';
     var a = scrollY * .7;
@@ -798,8 +796,7 @@ section { scroll-margin-top: 84px; }
   }
   addEventListener('scroll', function () {
     place();
-    if (Math.abs(scrollY - lastY) > 1 && !calm) { bot.classList.add('walk'); clearTimeout(walkT); walkT = setTimeout(function () { bot.classList.remove('walk'); }, 220); }
-    lastY = scrollY;
+        lastY = scrollY;
   }, { passive: true });
   addEventListener('resize', place); place();
   bot.addEventListener('click', function () { speak(FUN[clicks++ % FUN.length]); });
@@ -822,8 +819,7 @@ section { scroll-margin-top: 84px; }
   function prog() { var m = document.documentElement.scrollHeight - innerHeight; bar.style.width = (m > 0 ? scrollY / m * 100 : 0) + '%'; }
   addEventListener('scroll', prog, { passive: true }); prog();
 
-  if (calm) { var ob = document.getElementById('orbits'); if (ob.pauseAnimations) ob.pauseAnimations(); }
-  else if ('IntersectionObserver' in window) {
+  if (!calm && 'IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.remove('rise'); io.unobserve(e.target); } }); }, { threshold: .06 });
     document.querySelectorAll('.project, .course, .log li, .skills > div, .two > div, .contact').forEach(function (el) {
       if (el.getBoundingClientRect().top > innerHeight) { el.classList.add('go', 'rise'); io.observe(el); }
