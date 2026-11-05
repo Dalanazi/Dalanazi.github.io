@@ -223,6 +223,10 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
 #lbi { max-width: 100%; max-height: 90vh; border-radius: 6px; }
 #lbx { position: absolute; top: calc(12px + env(safe-area-inset-top, 0px)); inset-inline-end: 16px; width: 44px; height: 44px; padding: 0; font-size: 1.5rem; background: var(--star); color: var(--night); }
 @media (max-width: 560px) { .thumbs { grid-template-columns: repeat(2, minmax(0, 1fr)); } .thumb:first-child:nth-last-child(3) { grid-column: 1 / -1; } }
+.acts { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 48px; }
+.acts > div { display: grid; gap: 6px; min-width: 0; }
+.acts h3 { font-size: 1.375rem; color: var(--aqua); }
+@media (max-width: 860px) { .acts { grid-template-columns: minmax(0, 1fr); gap: 24px; } }
 @media (max-width: 860px) {
   .hero, .project, .two { grid-template-columns: minmax(0, 1fr); }
   .wins, .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -313,15 +317,6 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
     </ol>
   </section>
 
-  <div class="lab">
-    <div class="term" dir="ltr" lang="en">
-      <div class="bar"><i style="background:var(--coral)"></i><i style="background:var(--gold)"></i><i style="background:var(--ok)"></i><span>dana@riyadh: ~</span></div>
-      <div id="tty"><div class="c">whoami</div><div class="o">dana_alanazi # programmer, maker, robotics</div><div class="c">./aoun --send SOS --no-network</div><div class="o">[ok] signal delivered</div><div class="c">python detect.py --scan mri</div><div class="o">[ok] lesions marked</div><div class="c">sudo learn cybersecurity</div><div class="w">[..] in progress</div><div class="c">echo $NEXT</div><div class="o">co-op training, Jan 2027</div></div>
-      <form id="cmd" autocomplete="off"><label for="cmdin">$</label><input id="cmdin" type="text" spellcheck="false" autocapitalize="off" placeholder="type a command, e.g. help" aria-label="Terminal command"></form>
-      <div class="hints"><button type="button">help</button><button type="button">whoami</button><button type="button">skills</button><button type="button">projects</button><button type="button">awards</button><button type="button">contact</button></div>
-    </div>
-  </div>
-
   <section id="projects">
     <h2><span class="a">المشاريع</span><span class="e">Projects</span></h2>
     <div class="stack">
@@ -369,6 +364,15 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
   </section>
 
 
+  <div class="lab">
+    <div class="term" dir="ltr" lang="en">
+      <div class="bar"><i style="background:var(--coral)"></i><i style="background:var(--gold)"></i><i style="background:var(--ok)"></i><span>dana@riyadh: ~</span></div>
+      <div id="tty"><div class="c">whoami</div><div class="o">dana_alanazi # programmer, maker, robotics</div><div class="c">./aoun --send SOS --no-network</div><div class="o">[ok] signal delivered</div><div class="c">python detect.py --scan mri</div><div class="o">[ok] lesions marked</div><div class="c">sudo learn cybersecurity</div><div class="w">[..] in progress</div><div class="c">echo $NEXT</div><div class="o">co-op training, Jan 2027</div></div>
+      <form id="cmd" autocomplete="off"><label for="cmdin">$</label><input id="cmdin" type="text" spellcheck="false" autocapitalize="off" placeholder="type a command, e.g. help" aria-label="Terminal command"></form>
+      <div class="hints"><button type="button">help</button><button type="button">whoami</button><button type="button">skills</button><button type="button">projects</button><button type="button">awards</button><button type="button">contact</button></div>
+    </div>
+  </div>
+
   <section id="skills">
     <h2><span class="a">المهارات</span><span class="e">Skills</span></h2>
     <div class="skills">
@@ -386,24 +390,29 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
         <li><span class="a">أساسيات أمن الشبكات وتحليلها</span><span class="e">Network Security &amp; Analysis Fundamentals</span><small><span class="a">نادي طويق، جامعة الأمير سطام · أكتوبر 2026</span><span class="e">Tuwaiq Club, PSAU · Oct 2026</span></small></li>
         <li><span class="a">برمجة قواعد البيانات بلغة PL/SQL</span><span class="e">Database Programming with PL/SQL</span><small><span class="a">أكاديمية Oracle · مايو 2026</span><span class="e">Oracle Academy · May 2026</span></small></li>
         <li><span class="a">أساسيات مسابقات VEX العالمية</span><span class="e">Fundamentals of Global VEX Competitions</span><small><span class="a">الكلية التقنية الرقمية · أكتوبر 2025</span><span class="e">Digital Technical College · Oct 2025</span></small></li>
-        <li>IT Essentials (ITE 7.01)<small><span class="a">أكاديمية Cisco للشبكات</span><span class="e">Cisco Networking Academy</span></small></li>
-        <li><span class="a">مدرّبة ورشة «تعلم برمجة الروبوت»</span><span class="e">Workshop instructor: “Learn Robot Programming”</span><small><span class="a">الكلية التقنية الرقمية</span><span class="e">Digital Technical College</span></small></li>
+        <li><span class="a">IT Essentials (ITE 7.01)</span><span class="e">IT Essentials (ITE 7.01)</span><small><span class="a">أكاديمية Cisco للشبكات</span><span class="e">Cisco Networking Academy</span></small></li>
       </ul>
     </div>
     <div>
-      <h2><span class="a">خارج المعمل</span><span class="e">Beyond the lab</span></h2>
+      <h2><span class="a">القيادة والتطوع</span><span class="e">Leadership &amp; volunteering</span></h2>
       <ul class="list">
-        <li><span class="a">عضوة في منصة مسبار</span><span class="e">Misbar Space member</span></li>
-        <li><span class="a">فعاليات جمعية هواة الراديو وفلك</span><span class="e">Saudi Radio Amateurs and Falak events</span><small><span class="a">منها ملتقى آفاق، وجلسة تقنيات الأقمار الصناعية في واحة الملك سلمان للعلوم</span><span class="e">Including the Afaq forum and a satellite technology session at King Salman Science Oasis</span></small></li>
-        <li><span class="a">ورش برمجة وروبوتات</span><span class="e">Programming and robotics workshops</span></li>
-        <li><span class="a">21 ساعة تطوع موثّقة في المنصة الوطنية للعمل التطوعي</span><span class="e">21 volunteer hours certified on the National Volunteering Platform</span></li>
-        <li><span class="a">تطوع: تنظيم لقاء تقنية المستجدات</span><span class="e">Volunteer: organizing the college's new students meeting</span><small><span class="a">الكلية التقنية الرقمية للبنات بالرياض · 2 فبراير 2026 · 5 ساعات</span><span class="e">Digital Technical College for Girls, Riyadh · 2 Feb 2026 · 5 hours</span></small></li>
-        <li><span class="a">تطوع: يوم اليتيم العربي</span><span class="e">Volunteer: Arab Orphan Day</span><small><span class="a">جمعية تكامل الصحية · 14–17 مارس 2025 · 16 ساعة</span><span class="e">Health Integration Association · 14–17 Mar 2025 · 16 hours</span></small></li>
-        <li><span class="a">إنفوجرافيك في علوم الفضاء</span><span class="e">Space science infographics</span></li>
-        <li><span class="a">صناعة محتوى عربي يربط تقنيات الفضاء بالحياة اليومية</span><span class="e">Creating Arabic content that links space technology to daily life</span></li>
-        <li><span class="a">نظّمت زيارة لـ 33 طالبة إلى منارة الرياض لاستلهام أفكار مشاريع التخرج</span><span class="e">Organized a visit for 33 students to Manarat Al-Riyadh to inspire graduation project ideas</span><small><span class="a">28–29 أكتوبر 2026</span><span class="e">28–29 Oct 2026</span></small></li>
-        <li><span class="a">العربية: اللغة الأم · الإنجليزية: ممتاز</span><span class="e">Arabic: native · English: excellent</span></li>
+        <li><span class="a">نظّمت زيارة لـ 33 طالبة إلى منارة الرياض</span><span class="e">Organized a visit for 33 students to Manarat Al-Riyadh</span><small><span class="a">لاستلهام أفكار مشاريع التخرج · 28–29 أكتوبر 2026</span><span class="e">To inspire graduation project ideas · 28–29 Oct 2026</span></small></li>
+        <li><span class="a">مدرّبة ورشة «تعلم برمجة الروبوت»</span><span class="e">Workshop instructor: “Learn Robot Programming”</span><small><span class="a">الكلية التقنية الرقمية</span><span class="e">Digital Technical College</span></small></li>
+        <li><span class="a">21 ساعة تطوع موثقة</span><span class="e">21 certified volunteer hours</span><small><span class="a">المنصة الوطنية للعمل التطوعي</span><span class="e">National Volunteering Platform</span></small></li>
+        <li><span class="a">يوم اليتيم العربي</span><span class="e">Arab Orphan Day</span><small><span class="a">جمعية تكامل الصحية · مارس 2025 · 16 ساعة</span><span class="e">Health Integration Association · Mar 2025 · 16 hours</span></small></li>
+        <li><span class="a">تنظيم لقاء تقنية المستجدات</span><span class="e">Organizing the new students meeting</span><small><span class="a">الكلية التقنية الرقمية · فبراير 2026 · 5 ساعات</span><span class="e">Digital Technical College · Feb 2026 · 5 hours</span></small></li>
       </ul>
+    </div>
+  </section>
+
+  <section class="acts">
+    <div>
+      <h3><span class="a">الأنشطة</span><span class="e">Activities</span></h3>
+      <p><span class="a">عضوة في منصة مسبار · فعاليات جمعية هواة اللاسلكي وفلك · إنفوجرافيك ومحتوى عربي عن تقنيات الفضاء</span><span class="e">Misbar Space member · Saudi Amateur Radio Society and Falak events · Space infographics and Arabic content</span></p>
+    </div>
+    <div>
+      <h3><span class="a">اللغات</span><span class="e">Languages</span></h3>
+      <p><span class="a">العربية: اللغة الأم · الإنجليزية: ممتاز</span><span class="e">Arabic: native · English: excellent</span></p>
     </div>
   </section>
 
@@ -715,10 +724,7 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
   var botX = 0, sayT = null, walkT = null, ptT = null, lastY = scrollY, clicks = 0;
   var SAY = {
     top: ['أهلًا! أنا دليلك في صفحة دانا. نزّل معي', 'Hi! I am your guide to Dana\'s page. Scroll with me'],
-    lab: ['جرّب تكتب help في الطرفية', 'Try typing help in the terminal'],
     projects: ['هنا أكبر مشاريعها، حرّك المجسمات', 'Her biggest projects. Try dragging the models'],
-    log: ['هذي إنجازاتها، من الأهم', 'Her achievements, most important first'],
-    skills: ['مهاراتها من العتاد إلى الأمن', 'Her skills, from hardware to security'],
     contact: ['لا تتردد، راسلها!', 'Go ahead, send her a message!']
   };
   var FUN = [['بيب بوب!', 'Beep boop!'], ['اكتب في الطرفية: sudo hire dana', 'Type in the terminal: sudo hire dana'], ['طموحها أبعد من المدار', 'Her ambition reaches beyond orbit']];
@@ -746,7 +752,7 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
   bot.addEventListener('click', function () { speak(FUN[clicks++ % FUN.length]); });
   document.getElementById('lang').addEventListener('click', function () { setTimeout(place, 0); });
   if ('IntersectionObserver' in window) {
-    var said = {}, watch = { lab: document.querySelector('.lab'), projects: document.getElementById('projects'), log: document.getElementById('log'), skills: document.getElementById('skills'), contact: document.getElementById('contact') };
+    var said = {}, watch = { projects: document.getElementById('projects'), contact: document.getElementById('contact') };
     var sio = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting && !said[e.target.dataset.bot]) { said[e.target.dataset.bot] = 1; speak(SAY[e.target.dataset.bot]); } }); }, { rootMargin: '-45% 0px -45% 0px' });
     Object.keys(watch).forEach(function (k) { watch[k].dataset.bot = k; sio.observe(watch[k]); });
   }
