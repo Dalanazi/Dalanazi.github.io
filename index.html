@@ -22,7 +22,6 @@
 body { background: var(--night); color: var(--star); font-family: var(--body); font-weight: 300; font-size: 16px; line-height: 1.75;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 48px; }
 #aurora { position: fixed; inset: -12%; pointer-events: none; z-index: 0; background: radial-gradient(45% 45% at 82% 14%, rgba(169,139,255,.22), transparent 70%), radial-gradient(45% 50% at 12% 52%, rgba(53,224,210,.13), transparent 70%), radial-gradient(45% 45% at 72% 90%, rgba(255,127,176,.14), transparent 70%); }
-@media (prefers-reduced-motion: no-preference) { #aurora { animation: drift 26s ease-in-out infinite alternate; } @keyframes drift { to { transform: translate3d(4%, -3%, 0) scale(1.06); } } }
 #sky { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
 #app { position: relative; z-index: 1; max-width: 1080px; margin-inline: auto; display: grid; gap: 80px; }
 #app[data-lang="ar"] .e, #app[data-lang="en"] .a { display: none; }
@@ -40,7 +39,7 @@ h2 { font-size: 2.5rem; color: var(--gold); }
 .top nav { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
 .top nav a { text-decoration: none; color: var(--haze); font-size: .9375rem; }
 .top nav a:hover { color: var(--aqua); }
-.brand { font-family: var(--display); font-size: 1.5rem; color: var(--pink); }
+.brand { font-family: var(--display); font-size: clamp(1.875rem, 4vw, 2.75rem); line-height: 1.2; color: var(--gold); }
 button { font: inherit; font-weight: 500; color: var(--night); background: var(--aqua); border: 0; border-radius: 999px; padding: 4px 16px; cursor: pointer; }
 button:hover { background: var(--star); }
 
@@ -51,7 +50,6 @@ button:hover { background: var(--star); }
 .orbitbar { position: fixed; top: env(safe-area-inset-top, 0px); inset-inline-start: 0; height: 2px; width: 0; background: var(--gold); z-index: 5; }
 .orbitbar::after { content: ""; position: absolute; top: -3px; inset-inline-end: -4px; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 12px var(--gold); }
 .wins li { transition: transform .3s ease; }
-.wins li:hover { transform: translateY(-4px); }
 .log li { transition: background-color .25s ease; }
 .log li:hover { background: rgba(147, 183, 228, .07); }
 .top nav a { position: relative; }
@@ -60,7 +58,6 @@ button:hover { background: var(--star); }
 .rise { opacity: .15; transform: translateY(24px); }
 .go { transition: opacity .7s ease, transform .7s ease; }
 @media (prefers-reduced-motion: no-preference) {
-  .hero h1 em { animation: sweep 7s linear infinite; }
   @keyframes sweep { to { background-position: -220% 0; } }
 }
 .who { font-size: 1.125rem; color: var(--aqua); font-weight: 500; }
@@ -83,7 +80,7 @@ section { display: grid; gap: 28px; }
 .stack { display: grid; gap: 20px; }
 .project { --ink: var(--star); background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: 10px; padding: 36px; transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); gap: 16px 48px; }
 .project.gold { --bg: rgba(20, 58, 70, .78); }
-.project:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 14px 40px rgba(0, 0, 0, .35); }
+.project:hover { border-color: var(--gold); }
 .project.pink { --bg: rgba(58, 36, 72, .78); }
 .project > div { min-width: 0; display: grid; gap: 12px; align-content: start; }
 .project h3 { font-size: 2.75rem; }
@@ -140,6 +137,8 @@ section { display: grid; gap: 28px; }
 .contact .addr { overflow-wrap: anywhere; user-select: all; min-width: 0; font-weight: 500; }
 .contact a { font-weight: 500; }
 .contact button { background: #0F1A2E; color: var(--star); }
+.contact .cv { background: #0F1A2E; color: var(--star); padding: 4px 16px; border-radius: 999px; text-decoration: none; }
+.contact .cv:hover { background: var(--star); color: #0F1A2E; }
 .contact button:hover { background: var(--star); color: #0F1A2E; }
 
 :root { --violet: #A98BFF; --coral: #FF8F7A; --rose: #FF7FB0; --ok: #6FE3A5; }
@@ -160,7 +159,7 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
 .skills > div:nth-child(3) h3 { color: var(--violet); }
 .skills > div:nth-child(4) h3 { color: var(--coral); }
 .top button { background: linear-gradient(95deg, var(--aqua), var(--violet)); }
-.contact { background: linear-gradient(110deg, var(--gold), var(--coral), var(--violet), var(--aqua)); background-size: 300% 100%; border-radius: 10px; }
+.contact { background: var(--gold); border-radius: 10px; }
 #skills { position: relative; }
 #rain { position: absolute; inset: -24px 0; width: 100%; height: calc(100% + 48px); pointer-events: none; opacity: .22; }
 #skills > h2, #skills > .skills { position: relative; }
@@ -187,7 +186,6 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
   @keyframes ping { 0%, 100% { opacity: .15; } 40% { opacity: 1; } }
   #tty .caret { animation: blink 1s steps(2) infinite; }
   @keyframes blink { 50% { opacity: 0; } }
-  .contact { animation: flow 14s ease-in-out infinite alternate; }
   @keyframes flow { to { background-position: 100% 0; } }
 }
 #bot { position: fixed; left: 0; bottom: calc(10px + env(safe-area-inset-bottom, 0px)); width: 68px; height: 84px; padding: 0; background: none; border: 0; border-radius: 0; z-index: 6; cursor: pointer; will-change: transform; }
@@ -259,19 +257,19 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
     </svg>
   </button>
   <header class="top">
-    <span class="brand"><span class="a">دانا العنزي</span><span class="e">Dana Alanazi</span></span>
+    <span class="brand"><span class="a">دانا محمد العنزي</span><span class="e">Dana Mohammad Alanazi</span></span>
     <nav aria-label="Sections">
       <a href="#projects"><span class="a">المشاريع</span><span class="e">Projects</span></a>
       <a href="#log"><span class="a">الإنجازات</span><span class="e">Achievements</span></a>
       <a href="#skills"><span class="a">المهارات</span><span class="e">Skills</span></a>
       <a href="#contact"><span class="a">تواصل</span><span class="e">Contact</span></a>
+      <a href="https://dalanazi.github.io/Dana_Alanazi_CV.pdf" target="_blank" rel="noopener"><span class="a">السيرة الذاتية</span><span class="e">CV</span></a>
       <button id="lang" type="button"><span class="a">English</span><span class="e">العربية</span></button>
     </nav>
   </header>
 
   <div class="hero">
     <div>
-      <p class="who"><span class="a">دانا محمد العنزي</span><span class="e">Dana Mohammad Alanazi</span></p>
       <h1><span class="a">أبني حلولًا تقنية تترك <em>أثرًا</em></span><span class="e">I build tech solutions that leave a <em>mark</em></span></h1>
       <p class="lede a">طالبة تقنية برمجة وتطوير ويب في الكلية التقنية الرقمية للبنات بالرياض. أحب العمل العملي: برمجة العتاد، وإنترنت الأشياء، والروبوتات، وتتبع الأقمار الصناعية. قدتُ فريقين ابتكاريين في 2026، وأتجه نحو الأمن السيبراني والذكاء الاصطناعي.</p>
       <p class="lede e">Programming and Web Development student at the Digital Technical College for Girls in Riyadh. I like hands-on work: hardware programming, IoT, robotics, and satellite tracking. I led two innovation teams in 2026 and I'm heading toward cybersecurity and AI.</p>
@@ -281,8 +279,8 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
       <svg id="orbits" viewBox="-210 -150 420 300" aria-hidden="true">
         <ellipse id="o1" rx="195" ry="62" transform="rotate(-18)"/>
         <ellipse id="o2" rx="160" ry="118" transform="rotate(24)"/>
-        <g transform="rotate(-18)"><g class="sat"><rect x="-4" y="-4" width="8" height="8"/><rect x="-16" y="-2.5" width="9" height="5"/><rect x="7" y="-2.5" width="9" height="5"/><animateMotion dur="16s" repeatCount="indefinite" rotate="auto" path="M195 0A195 62 0 1 1-195 0A195 62 0 1 1 195 0" /></g></g>
-        <circle class="alt" r="4"><animateMotion dur="11s" repeatCount="indefinite" path="M-110 -116A160 118 24 1 0 110 116A160 118 24 1 0 -110 -116"/></circle>
+        <g transform="rotate(-18)"><g class="sat"><rect x="-4" y="-4" width="8" height="8"/><rect x="-16" y="-2.5" width="9" height="5"/><rect x="7" y="-2.5" width="9" height="5"/><animateMotion dur="34s" repeatCount="indefinite" rotate="auto" path="M195 0A195 62 0 1 1-195 0A195 62 0 1 1 195 0" /></g></g>
+        <circle class="alt" r="4"><animateMotion dur="26s" repeatCount="indefinite" path="M-110 -116A160 118 24 1 0 110 116A160 118 24 1 0 -110 -116"/></circle>
       </svg>
       <p><span class="a">طموحي أبعد من المدار</span><span class="e">My ambition reaches beyond orbit</span></p>
     </div>
@@ -291,8 +289,8 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
   <ul class="wins" aria-label="Highlights">
     <li style="--c:var(--gold)"><strong><span class="a">المركز الأول</span><span class="e">1st place</span></strong><span class="label"><span class="a">هاكاثون ريادة AI 2026</span><span class="e">Riyada AI Hackathon 2026</span></span></li>
     <li style="--c:var(--pink)"><strong><span class="a">المركز الثالث</span><span class="e">3rd place</span></strong><span class="label"><span class="a">ساتثون 2، فريق Digital Apollo</span><span class="e">Satthon 2, Team Digital Apollo</span></span></li>
-    <li style="--c:var(--aqua)"><strong><span class="a">تأهل لسيف</span><span class="e">SAIF qualified</span></strong><span class="label"><span class="a">معرض ومسابقة سيف 2026</span><span class="e">SAIF 2026 Exhibition &amp; Competition</span></span></li>
-    <li style="--c:var(--star)"><strong><span class="a">طلب براءة</span><span class="e">Patent filed</span></strong><span class="label"><span class="a">جهاز عون، مقدَّم إلى SAIP</span><span class="e">Aoun, application filed with SAIP</span></span></li>
+    <li style="--c:var(--aqua)"><strong><span class="a">جائزة التميز</span><span class="e">Excellence Award</span></strong><span class="label"><span class="a">مسابقة RATK_2025 للروبوت والذكاء الاصطناعي</span><span class="e">RATK_2025 Robotics &amp; AI Competition</span></span></li>
+    <li style="--c:var(--star)"><strong><span class="a">جائزة البناء</span><span class="e">Construction Award</span></strong><span class="label"><span class="a">بطولة VEX World الوطنية</span><span class="e">National VEX World Championship</span></span></li>
   </ul>
 
   <div class="lab">
@@ -370,7 +368,6 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
   </section>
 
   <section id="skills">
-    <canvas id="rain" aria-hidden="true"></canvas>
     <h2><span class="a">المهارات</span><span class="e">Skills</span></h2>
     <div class="skills">
       <div><h3><span class="a">العتاد وإنترنت الأشياء</span><span class="e">Hardware &amp; IoT</span></h3><ul><li>Arduino / ESP32</li><li>LoRa, GPS</li><li><span class="a">الروبوتات</span><span class="e">Robotics</span></li><li><span class="a">تتبع الأقمار الصناعية</span><span class="e">Satellite tracking</span></li><li><span class="a">تشغيل محطة رصد الأقمار</span><span class="e">Satellite monitoring station operations</span></li></ul></div>
@@ -418,6 +415,7 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
       <button id="copy" type="button"><span id="copyA" class="a">نسخ البريد</span><span id="copyE" class="e">Copy email</span></button>
       <a href="https://www.linkedin.com/in/dana-alanazi-675b07391" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/Dalanazi/Dalanazi" target="_blank" rel="noopener">GitHub</a>
+      <a class="cv" href="https://dalanazi.github.io/Dana_Alanazi_CV.pdf" target="_blank" rel="noopener"><span class="a">السيرة الذاتية PDF</span><span class="e">CV (PDF)</span></a>
     </div>
   </section>
 </div>
@@ -534,7 +532,7 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
       var d = Math.min(devicePixelRatio || 1, 2);
       if (c.clientWidth !== w || c.clientHeight !== h) { w = c.clientWidth; h = c.clientHeight; c.width = w * d; c.height = h * d; gl.viewport(0, 0, c.width, c.height); }
       if (!w) return;
-      if (spin && !drag) { ry += .012 * dir; if (id === 'aoun3d' && Math.abs(ry) > .75) { ry = Math.sign(ry) * .75; dir = -dir; } }
+      if (spin && !drag) { ry += .005 * dir; if (id === 'aoun3d' && Math.abs(ry) > .75) { ry = Math.sign(ry) * .75; dir = -dir; } }
       var a = w / h, f = 1 / Math.tan(.29), n = .1, m = 50;
       gl.uniformMatrix4fv(U.P, false, [f / a, 0, 0, 0, 0, f, 0, 0, 0, 0, (m + n) / (n - m), -1, 0, 0, 2 * m * n / (n - m), 0]);
       var cy = Math.cos(ry), sy = Math.sin(ry), cx = Math.cos(rx), sx = Math.sin(rx);
@@ -666,14 +664,6 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
     x.globalAlpha = 1;
   }
   seed(); draw(0); addEventListener('resize', function () { seed(); draw(performance.now()); });
-  if (!calm) (function tick(t) {
-    requestAnimationFrame(tick);
-    if (document.hidden || t - last < 40) return;
-    last = t; sk = scrollY;
-    if (t > nx) { me = { t: t, x: W * (.4 + Math.random() * .6), y: H * Math.random() * .45 }; nx = t + 6000 + Math.random() * 6000; }
-    draw(t);
-  })(0);
-
   var tty = document.getElementById('tty'), lines = [].map.call(tty.children, function (d) { return [d.className, d.textContent]; });
   var halted = false, caretEl = null;
   if (!calm && 'IntersectionObserver' in window) {
@@ -692,21 +682,6 @@ h2 { background: linear-gradient(95deg, var(--c1, var(--gold)), var(--c2, var(--
       if (on && !timer) { if (!tty.dataset.run) { tty.dataset.run = 1; tty.textContent = ''; n = 0; ci = 0; } step(); }
     }).observe(tty);
 
-    var rc = document.getElementById('rain'), rx = rc.getContext('2d'), cols = [], rw = 0, rh = 0, vis = false, rl = 0, G = '01{}<>/#$=;ABCDEF';
-    function size() { rw = rc.clientWidth; rh = rc.clientHeight; rc.width = rw; rc.height = rh; cols = []; for (var i = 0; i < rw / 18; i++) cols.push(Math.random() * rh); rx.font = '14px monospace'; }
-    size(); addEventListener('resize', size);
-    new IntersectionObserver(function (e) { vis = e[0].isIntersecting; }).observe(rc);
-    (function rain(t) {
-      requestAnimationFrame(rain);
-      if (!vis || t - rl < 70) return; rl = t;
-      rx.globalCompositeOperation = 'destination-out'; rx.fillStyle = 'rgba(0,0,0,.12)'; rx.fillRect(0, 0, rw, rh);
-      rx.globalCompositeOperation = 'source-over';
-      cols.forEach(function (y, i) {
-        rx.fillStyle = i % 3 ? '#6FE3A5' : '#A98BFF';
-        rx.fillText(G[Math.floor(Math.random() * G.length)], i * 18, y);
-        cols[i] = y > rh && Math.random() > .96 ? 0 : y + 18;
-      });
-    })(0);
   }
 
   var BOOK = {
